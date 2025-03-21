@@ -3,7 +3,7 @@
 
 :root {
 
-    font: vars.$font-normal;
+    font-family: vars.$font-normal;
     color: vars.$color-white;
   }
   
@@ -30,7 +30,7 @@
     justify-content: space-between;
     margin-bottom: 2.5rem;
   }
-  
+   
   .header .header__brand {
     display: flex;
     align-items: center;
@@ -210,11 +210,11 @@
   
     box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
     border: solid 1px rgba(0, 0, 0, 0);
-    background-image: radial-gradient(circle at 50% 50%, vars.$(--color-dusk), #211e2e 92%);
+    background-image: radial-gradient(circle at 50% 50%, vars.$color-dusk, #211e2e 92%);
   }
   
   .addForm .title {
-    font: vars.$(--font-title-biggest);
+    font: vars.$font-title-biggest;
     margin-block: 18px;
   }
   
@@ -226,7 +226,7 @@
     border: solid 2px transparent;
     
   
-    font: vars.$(--font-title-medium);
+    font: vars.$font-title-medium;
     text-align: center;
   }
   
@@ -238,7 +238,7 @@
     margin-bottom: -2px;
     border-radius: inherit;
     background-color: transparent;
-    background-image: linear-gradient(to left, transparent, #343045 25%, #c0b7e8 45%, vars.$(--color-dark-lilac) 65%, #343045 75%, transparent );
+    background-image: linear-gradient(to left, transparent, #343045 25%, #c0b7e8 45%, vars.$color-dark-lilac 65%, #343045 75%, transparent );
   }
   
   .addForm .addForm__group {
@@ -252,16 +252,16 @@
   
     padding: 8.5px 16px 8.5px 16px;
     border-radius: 40px;
-    border: solid 2px vars.$(--color-white);
+    border: solid 2px vars.$color-white;
   
-    color: vars.$(--color-white);
+    color: vars.$color-white;
     background-color: transparent;
   
-    font: vars.$(--font-normal);
+    font: vars.$font-normal;
   }
   
   .addForm .addForm__input::placeholder {
-    color: vars.$(--color-white-50);
+    color: vars.$color-white-50;
   }
   
   .addForm .addForm__group--upload {
@@ -313,8 +313,8 @@
     margin-inline: auto;
     margin-block: 8px;
     padding: 5px 18px;
-    color: vars.$(--color-white);
-    font: vars.$(--font-button);
+    color: vars.$color-white;
+    font: vars.$font-button;
     text-transform: uppercase;
     text-decoration: none;
   
@@ -325,7 +325,7 @@
     border-image-source: linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
     border-image-slice: 1;
     border-radius: 20px;
-    background-color: vars.$(--color-dark-lilac);
+    background-color: vars.$color-dark-lilac;
     /*
     background-image: linear-gradient(to bottom, vars.$(--color-dark-lilac), vars.$(--color-dark-lilac)), linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
     background-origin: border-box;
@@ -340,14 +340,14 @@
   
     margin: 8px;
     padding: 5px 18px;
-    color: vars.$(--color-white);
-    font: vars.$(--font-button);
+    color: vars.$color-white;
+    font: vars.$font-button;
     text-transform: none;
     text-decoration: none;
     text-align: center;
   
     border-radius: 40px;
-    background-image: linear-gradient(to right, vars.$(--color-dark-lilac) -2%, #c0b7e8 98%);
+    background-image: linear-gradient(to right, vars.$color-dark-lilac -2%, #c0b7e8 98%);
   
     cursor: pointer;
   }
@@ -359,21 +359,21 @@
     margin-inline: auto;
     margin-block: 8px;
     padding: 5px 18px;
-    color: vars.$(--color-white);
-    font: vars.$(--font-button);
+    color: vars.$color-white;
+    font: vars.$font-button;
     text-transform: none;
     text-decoration: none;
     text-align: center;
   
     border-radius: 40px;
     background-color: transparent;
-    background-image: linear-gradient(to right, vars.$(--color-dark-lilac) -2%, #c0b7e8 98%);
+    background-image: linear-gradient(to right, vars.$color-dark-lilac -2%, #c0b7e8 98%);
   
     cursor: pointer;
   }
   
   .button--large:hover {
-    border-color: vars.$(--color-white);
+    border-color: vars.$color-white;
   }
   
   /* ICONS */
@@ -384,7 +384,7 @@
     color: transparent;
     cursor: pointer;
     border-radius: 50%;
-    box-shadow: 0 0 5px 0 vars.$(--color-greyish-brown-two);
+    box-shadow: 0 0 5px 0 vars.$color-greyish-brown-two;
   }
   
   .icon__www {
