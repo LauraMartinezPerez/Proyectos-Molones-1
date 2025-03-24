@@ -95,23 +95,29 @@ function App() {
 
                             <div className="card__author">
                                 <div className="card__authorPhoto"></div>
-                                <p className="card__job">{job}</p>
-                                <h3 className="card__name">{name}</h3>
+                                <p className="card__job">{job || "Trabajo"}</p>
+                                <h3 className="card__name">
+                                    {name || "Nombre"}
+                                </h3>
                             </div>
 
                             <div className="card__project">
-                                <h3 className="card__name">{projectName}</h3>
-                                <p className="card__slogan">{slogan}</p>
+                                <h3 className="card__name">
+                                    {projectName || "Nombre del proyecto"}
+                                </h3>
+                                <p className="card__slogan">
+                                    {slogan || "Slogan"}
+                                </p>
                                 <h3 className="card__descriptionTitle">
                                     Product description
                                 </h3>
                                 <p className="card__description">
-                                    {description}
+                                    {description || "Descripción"}
                                 </p>
 
                                 <div className="card__technicalInfo">
                                     <p className="card__technologies">
-                                        {technologies}
+                                        {technologies || "Tecnologías"}
                                     </p>
 
                                     <a
