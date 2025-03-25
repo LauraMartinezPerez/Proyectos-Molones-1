@@ -1,12 +1,10 @@
 import "../scss/App.scss";
-import adalabLogo from "../images/adalab.png";
-import laptopIcon from "../images/laptop-code-solid.svg";
 import { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+
 
 function App() {
-    //Cuando la usuaria rellene los inputs:
-    //guardar valor
-    //pintar en la página
 
     const [projectName, setProjectName] = useState("Nombre del proyecto");
     const [slogan, setSlogan] = useState("Slogan");
@@ -52,25 +50,7 @@ function App() {
     return (
         <>
             <div className="container">
-                <header className="header">
-                    <a
-                        className="header__brand"
-                        href="./"
-                        title="Haz click para volver a la página inicial"
-                    >
-                        <img
-                            className="header__companyLogo"
-                            src={laptopIcon}
-                            alt="Logo proyectos molones"
-                        />
-                        <h1 className="header__title">Proyectos molones</h1>
-                    </a>
-                    <img
-                        className="logoSponsor"
-                        src={adalabLogo}
-                        alt="Logo Adalab"
-                    />
-                </header>
+               < Header />
 
                 <main className="main">
                     <section className="hero">
@@ -244,14 +224,8 @@ function App() {
                         </fieldset>
                     </form>
                 </main>
-
-                <footer className="footer">
-                    <img
-                        className="logoSponsor"
-                        src={adalabLogo}
-                        alt="Logo Adalab"
-                    />
-                </footer>
+            < Footer />
+                
             </div>
         </>
     );

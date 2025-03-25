@@ -22,7 +22,7 @@
     background-color: vars.$color-dark;
 }
 
-.header {
+/* .header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2.5rem;
@@ -45,7 +45,7 @@
     font: vars.$font-title-brand;
     text-transform: capitalize;
     color: vars.$color-white;
-}
+} */
 
 @media screen and (min-width: 768px) {
     .main {
@@ -310,11 +310,11 @@
     margin: 0;
 }
 
-.footer {
+/* .footer {
     display: flex;
     justify-content: center;
     padding: 19px;
-}
+} */
 
 /* COMPONENTS */
 
