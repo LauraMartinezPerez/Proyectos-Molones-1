@@ -1,28 +1,42 @@
-## :construction: Proyectos Molones - In Progress
+# Proyectos Molones
 
-![Badge en Desarollo](https://img.shields.io/badge/STATUS-IN%20PROGRESS-green)
+Bienvenida a **Proyectos Molones**, la aplicación que convierte tus datos en una tarjeta de presentación interactiva y visual en tiempo real. ¡Porque tú y tus proyectos merecéis brillar! ✨
 
+## ¿Qué es Proyectos Molones?
 
-## IN Progress
-Tenemos un primer intento de maquetación de otra empresa que finalmente no pudo con la complejidad del proyecto.
+Es una aplicación donde introduces información personal y profesional a través de un formulario sencillo. Al instante, verás cómo tu tarjeta de presentación cobra vida con tus datos y fotos. Además, podrás guardar y compartir tu tarjeta con quien quieras.
 
-Dado el diseño de la página, empezaron a maquetar la página del formulario para crear una tarjeta. El diseño no está completo (faltan por ajustar detalles y el responsive). Espero que os ayude a avanzar en el proyecto.
+## Características Principales
 
-## Descripción
+- **Previsualización en Tiempo Real:** Completa el formulario y observa cómo tu tarjeta se actualiza al momento. ¡Magia pura! 🪄
+- **Personalización Completa:** Añade tu nombre, empleo, repositorio de GitHub, página web, nombres de tus proyectos web y más.
+- **Galería de Imágenes:** Sube fotos tuyas y de tus proyectos para darle ese toque personal y profesional.
+- **Enlaces Directos:** Tu tarjeta incluirá iconos que enlazan a tu repositorio de GitHub y a la demo de tu proyecto. ¡Todo al alcance de un clic!
+- **Guardado Fácil:** Guarda tu tarjeta con todos los datos e imágenes para compartirla o visualizarla cuando quieras.
 
-En este proyecto vamos a realizar una aplicación web que nos permite crear un escaparates de proyectos que nos molen mucho. En la página web podemos:
--  Introducir los datos del proyecto y obtener una vista detallada del mismo.
--  Ver una lista de proyectos que ya hemos creado.
+## ¿Cómo Funciona?
 
-### :hammer: Diseño
+1. **Rellena el Formulario:** Introduce tu información personal y detalles de tus proyectos.
+2. **Añade Imágenes:** Sube tus fotos y las de tus proyectos para una presentación más atractiva.
+3. **Visualiza en Tiempo Real:** Observa cómo tu tarjeta se actualiza con cada dato que introduces.
+4. **Guarda tu Tarjeta:** Una vez satisfecha con el resultado, guarda tu tarjeta para compartirla o consultarla más tarde.
 
-El diseño lo podéis inspeccionar en este proyecto de [zeplin](https://zpl.io/DlrJNMl). En este diseño debéis tener en cuenta:
+## Tecnologías Utilizadas
 
-- El diseño de la web puede ser adaptado por cada equipo, asi que podéis ser tan creativas como quieran.
-- Dentro del Zeplin encontrarán el diseño para movil y el Desktop/tablet, este último es el mismo para los dos dispositivos.
-- Las pantallas dentro del Zeplin son tanto para el proyecto del módulo 3 y el módulo 4.
-- En el diseño no hay una página de inicio que luego te lleve a la página del formulario para crear un proyecto, pero sois libres de crearla si queréis.
+Este proyecto ha sido desarrollado con mucho cariño y café ☕ utilizando **React**, una biblioteca de JavaScript para construir interfaces de usuario interactivas y eficientes.
 
-### :woman_technologist: HTML y CSS
+## Equipo de Desarrollo
 
-Este repositorio contiene el HTML y CSS de la página del formulario para crear el proyecto. Lo que ¡Vaya! el equipo que estaba trabajando no lo ha completado y este se ha quedado a medias. Vamos a tener que darle una vuelta al código. **Si vuestro equipo decide utilizar este HTML de base deberá heredar el código y completar el diseño.**
+Detrás de este proyecto están tres **adalabers** muy molonas:
+
+- **Andrea Chust**
+- **Judit Casamitjana**
+- **Laura Martínez**
+
+## Instalación y Uso
+
+Si deseas ejecutar este proyecto en tu máquina local:
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/tu-usuario/proyectos-molones.git
