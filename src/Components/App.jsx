@@ -5,54 +5,86 @@ import Footer from "./Footer";
 import Form from "./Form";
 import Preview from "./Preview";
 
-
 function App() {
+    const [projectInfo, setProjectInfo] = useState({
+        projectName: "",
+        slogan: "",
+        repository: "",
+        demo: "",
+        technologies: "",
+        description: "",
+        name: "",
+        job: "",
+    });
+    // const [projectName, setProjectName] = useState("Nombre del proyecto");
+    // const [slogan, setSlogan] = useState("Slogan");
+    // const [repository, setRepository] = useState("Repositorio");
+    // const [demo, setDemo] = useState("Demo");
+    // const [technologies, setTecnologies] = useState("Tecnologías");
+    // const [description, setDescription] = useState("Descripción");
+    // const [name, setName] = useState("Nombre");
+    // const [job, setJob] = useState("Trabajo");
 
-    const [projectName, setProjectName] = useState("Nombre del proyecto");
-    const [slogan, setSlogan] = useState("Slogan");
-    const [repository, setRepository] = useState("Repositorio");
-    const [demo, setDemo] = useState("Demo");
-    const [technologies, setTecnologies] = useState("Tecnologías");
-    const [description, setDescription] = useState("Descripción");
-    const [name, setName] = useState("Nombre");
-    const [job, setJob] = useState("Trabajo");
-
-    const handleProjectName = (valueName) => {
-        setProjectName(valueName);
+    const handleProjectName = (valueProjectName) => {
+        setProjectInfo({
+            ...projectInfo,
+            projectName: valueProjectName,
+        });
     };
 
     const handleSlogan = (valueSlogan) => {
-        setSlogan(valueSlogan);
+        setProjectInfo({
+            ...projectInfo,
+            slogan: valueSlogan,
+        });
     };
 
     const handleRepository = (valueRepository) => {
-        setRepository(valueRepository);
+        setProjectInfo({
+            ...projectInfo,
+            repository: valueRepository,
+        });
     };
 
     const handleDemo = (valueDemo) => {
-        setDemo(valueDemo);
+        setProjectInfo({
+            ...projectInfo,
+            demo: valueDemo,
+        });
     };
 
     const handleTechnologies = (valueTechnologies) => {
-        setTecnologies(valueTechnologies);
+        setProjectInfo({
+            ...projectInfo,
+            technologies: valueTechnologies,
+        });
     };
 
     const handleDescription = (valueDescription) => {
-        setDescription(valueDescription);
+        setProjectInfo({
+            ...projectInfo,
+            description: valueDescription,
+        });
     };
 
     const handleName = (valueName) => {
-        setName(valueName);
+        setProjectInfo({
+            ...projectInfo,
+            name: valueName,
+        });
     };
 
     const handleJob = (valueJob) => {
-        setJob(valueJob);
+        setProjectInfo({
+            ...projectInfo,
+            job: valueJob,
+        });
     };
 
     return (
         <>
             <div className="container">
-               < Header />
+                <Header />
 
                 <main className="main">
                     <section className="hero">
@@ -66,31 +98,20 @@ function App() {
                         </a>
                     </section>
 
-                   <Preview 
-                        nameProject={projectName}
-                        userSlogan={slogan}
-                        nameRepository={repository}
-                        nameDemo={demo}
-                        nameTechnologies={technologies}
-                        nameDescription={description}
-                        nameName={name}
-                        nameJob={job}
-                        />
-                    
-                    <Form 
+                    <Preview project={projectInfo} />
+
+                    <Form
                         onChangeProjectName={handleProjectName}
                         onChangeSlogan={handleSlogan}
                         onChangeRepository={handleRepository}
-                        onChangeDemo={handleDemo} 
+                        onChangeDemo={handleDemo}
                         onChangeTechnologies={handleTechnologies}
                         onChangeDescription={handleDescription}
                         onChangeName={handleName}
                         onChangeJob={handleJob}
-                    
                     />
                 </main>
-            < Footer />
-                
+                <Footer />
             </div>
         </>
     );
