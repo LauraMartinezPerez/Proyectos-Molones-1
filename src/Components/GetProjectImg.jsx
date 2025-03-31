@@ -4,7 +4,7 @@ import React from "react";
 /* import PropTypes from "prop-types"; */
 /* import "../styles/GetAvatar.css"; */
 
-function GetAvatar({ avatar, updateAvatar, text = "" }) {
+function GetProjectImg({ imageProject, updateProjectImage, text = "" }) {
     // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
     // esto es un manejador de ficheros
     const fr = new FileReader();
@@ -59,7 +59,7 @@ function GetAvatar({ avatar, updateAvatar, text = "" }) {
 
         // aquí hago lifting con los datos del fichero
         // lo que haga el componente madre con esta información es otro problema diferente
-        updateAvatar(image);
+        updateProjectImage(image);
     };
 
     return (
@@ -77,7 +77,7 @@ function GetAvatar({ avatar, updateAvatar, text = "" }) {
 
             <div
                 className="get-avatar__preview"
-                style={{ backgroundImage: `url(${avatar})` }}
+                style={{ backgroundImage: `url(${imageProject})` }}
             ></div>
         </div>
     );
@@ -89,4 +89,4 @@ function GetAvatar({ avatar, updateAvatar, text = "" }) {
     text: PropTypes.string,
 };
  */
-export default GetAvatar;
+export default GetProjectImg;
