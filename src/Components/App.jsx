@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Form from "./Form";
 import Preview from "./Preview";
+import GetAvatar from "./GetAvatar";
 
 function App() {
     const [projectInfo, setProjectInfo] = useState({
@@ -15,6 +16,8 @@ function App() {
         description: "",
         name: "",
         job: "",
+        authorImage: "",
+        projectImage: "",
     });
     // const [projectName, setProjectName] = useState("Nombre del proyecto");
     // const [slogan, setSlogan] = useState("Slogan");
@@ -81,6 +84,13 @@ function App() {
         });
     };
 
+    const handleAuthorImage = (avatar) => {
+        setProjectInfo({
+            ...projectInfo,
+            authotImage: avatar,
+        });
+    };
+
     return (
         <>
             <div className="container">
@@ -99,6 +109,7 @@ function App() {
                     </section>
 
                     <Preview project={projectInfo} />
+                    <GetAvatar project={projectInfo} />
 
                     <Form
                         onChangeProjectName={handleProjectName}
@@ -109,6 +120,7 @@ function App() {
                         onChangeDescription={handleDescription}
                         onChangeName={handleName}
                         onChangeJob={handleJob}
+                        onChangeAuthorImage={handleAuthorImage}
                     />
                 </main>
                 <Footer />
