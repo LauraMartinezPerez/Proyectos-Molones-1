@@ -1,5 +1,6 @@
 
 import imageBooks from "../images/ebook-example.jpg";
+import imageAvatar from "../images/avatar.webp";
  import "../scss/layout/Preview.scss";
 
 
@@ -18,7 +19,11 @@ const Preview = ({ project }) => {
                      </h2>
 
                      <div className="card__author">
-                         <div className="card__authorPhoto"></div>
+                        
+                         <div className="card__authorPhoto">
+                            <img src={project.avatar || imageAvatar} alt="autora"/>
+                         </div>
+
                          <p className="card__job">{project.job || "Trabajo"}</p>
                          <h3 className="card__name">
                              {project.name || "Nombre"}

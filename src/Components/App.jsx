@@ -20,7 +20,10 @@ import "../scss/App.scss";
          name: "",
          job: "",
          imageProject: "",
+         avatar: "",
      });
+     const [linkPage, setLinkPage] = useState("");
+
      // const [projectName, setProjectName] = useState("Nombre del proyecto");
      // const [slogan, setSlogan] = useState("Slogan");
      // const [repository, setRepository] = useState("Repositorio");
@@ -90,7 +93,48 @@ import "../scss/App.scss";
             ...projectInfo,
             imageProject: valueImageProject,
         });
+    };
+
+    const handleChangeAvatar = (valueAvatar) => {
+        setProjectInfo({
+            ...projectInfo,
+            avatar: valueAvatar,
+        });
     }
+
+    const handleSaveProject = () => {
+
+        const apiUpload = {
+            autor: projectInfo.projectName,
+            slogan: projectInfo.slogan,
+           repo: projectInfo.repository,
+            demo: projectInfo.demo,
+            technologies: projectInfo.technologies,
+            desc: projectInfo.description,
+            name: projectInfo.name,
+            job: projectInfo.job,
+            image: projectInfo.imageProject,
+            photo: projectInfo.avatar,
+           
+        }
+
+        fetch("https://dev.adalab.es/api/projectCard", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"},
+                    body: JSON.stringify(apiUpload) 
+                })
+            .then (res => res.json())
+            .then(data => {
+                
+               setLinkPage
+                console.log(data.cardURL);
+            })
+            .catch(error => {
+                console.error("Error", error);
+            });
+        };
+             
 
     return (
         <>
@@ -121,8 +165,13 @@ import "../scss/App.scss";
                         onChangeName={handleName}
                         onChangeJob={handleJob}
                         onChangeImageProject={handleChangeImageProject}
+                        onChangeAvatar={handleChangeAvatar}
+                        onSaveProject={handleSaveProject}
+                        
+                        
                     
                     />
+                    
                 </main>
             < Footer />
                 

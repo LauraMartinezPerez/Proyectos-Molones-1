@@ -31,6 +31,15 @@ const Form = (props) => {
         props.onChangeImageProject(avatar);
     }
 
+    const handleChangeAvatar = (avatar) => {
+        props.onChangeAvatar(avatar);
+    }
+
+    const handleSaveProject = (ev) => {
+        ev.preventDefault();
+        props.onSaveProject();
+    
+    }
 
     return (
         <>
@@ -117,28 +126,13 @@ const Form = (props) => {
 
         <fieldset className="addForm__group--upload">
             <GetAvatar text="Subir foto del proyecto" updateAvatar={handleChangeImageProject}/>
-         {/*    <label htmlFor="image" className="button">
-                Subir foto del proyecto
-            </label>
-            <input
-                className="addForm__hidden"
-                type="file"
-                name="image"
-                id="image"
-            /> */}
-            <label htmlFor="photo" className="button">
-                Subir foto de la autora
-            </label>
-            <input
-                className="addForm__hidden"
-                type="file"
-                name="photo"
-                id="photo"
-            />
-            <button className="button--large">
+            <GetAvatar text="Subir foto de la autora" updateAvatar={handleChangeAvatar}/>
+
+            <button className="button--large" onClick={handleSaveProject}>
                 Guardar proyecto
             </button>
-        </fieldset>
+        </fieldset> 
+        <a href="" target="_blank">Visualiza tu tarjeta</a>
     </form>
     </>
     )
