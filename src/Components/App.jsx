@@ -130,9 +130,6 @@ import "../scss/App.scss";
                setLinkPage
                 console.log(data.cardURL);
             })
-            .catch(error => {
-                console.error("Error", error);
-            });
         };
              
 
