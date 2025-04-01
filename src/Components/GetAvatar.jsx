@@ -71,6 +71,7 @@ function GetAvatar({ avatar, updateAvatar, text = "" }) {
                     ref={myFileField}
                     style={{ display: "none" }}
                     onChange={uploadImage}
+                    className="addForm__hidden"
                 />
                 
             </label>
