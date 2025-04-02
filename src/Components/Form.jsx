@@ -1,4 +1,3 @@
-
 import GetAvatar from "./GetAvatar";
 import "../scss/layout/Form.scss";
 
@@ -41,7 +40,7 @@ const Form = (props) => {
 
     return (
         <>
-        <form className="addForm">
+        <form className="addForm" onSubmit={handleSavedProject}>
         <h2 className="title">Información</h2>
         <fieldset className="addForm__group">
             <legend className="addForm__title">
@@ -132,10 +131,10 @@ const Form = (props) => {
 
         <fieldset className="addForm__group--upload">
             <GetAvatar text="Subir foto del proyecto" updateAvatar={handleChangeImageProject}/>
-     
+
             <GetAvatar text="Subir foto de la autora" updateAvatar={handleChangeAvatar} />
 
-            <button className="button--large" onClick={handleSavedProject}>
+            <button className="button--large" type="submit">
                 Guardar proyecto
             </button>
         </fieldset>
