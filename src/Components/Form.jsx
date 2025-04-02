@@ -30,6 +30,13 @@ const Form = (props) => {
     const handleChangeImageProject = (avatar) => {
         props.onChangeImageProject(avatar);
     }
+    const handleChangeAvatar = (avatar) => {
+        props.onChangeAvatar (avatar);
+    }
+    const handleSavedProject = (ev) => {
+        ev.preventDefault();
+        props.onSavedProject ()
+    }
 
 
     return (
@@ -47,6 +54,7 @@ const Form = (props) => {
                 id="name"
                 placeholder="Nombre del proyecto"
                 onChange={handleChangeProjectName}
+                required
             />
             <input
                 className="addForm__input"
@@ -55,6 +63,7 @@ const Form = (props) => {
                 id="slogan"
                 placeholder="Slogan"
                 onChange={handleChangeSlogan}
+                required
             />
             <div className="addForm__2col">
                 <input
@@ -64,6 +73,7 @@ const Form = (props) => {
                     id="repo"
                     placeholder="Repositorio"
                     onChange={handleChangeRepository}
+                    required
                 />
                 <input
                     className="addForm__input"
@@ -72,6 +82,7 @@ const Form = (props) => {
                     id="demo"
                     placeholder="Demo"
                     onChange={handleChangeDemo}
+                    required
                 />
             </div>
             <input
@@ -81,6 +92,7 @@ const Form = (props) => {
                 id="technologies"
                 placeholder="Tecnologías"
                 onChange={handleChangeTechnologies}
+                required
             />
             <textarea
                 className="addForm__input"
@@ -90,6 +102,7 @@ const Form = (props) => {
                 placeholder="Descripción"
                 rows="5"
                 onChange={handleChangeDescription}
+                required
             ></textarea>
         </fieldset>
 
@@ -104,6 +117,7 @@ const Form = (props) => {
                 id="autor"
                 placeholder="Nombre"
                 onChange={handleChangeName}
+                required
             />
             <input
                 className="addForm__input"
@@ -112,30 +126,16 @@ const Form = (props) => {
                 id="job"
                 placeholder="Trabajo"
                 onChange={handleChangeJob}
+                required
             />
         </fieldset>
 
         <fieldset className="addForm__group--upload">
             <GetAvatar text="Subir foto del proyecto" updateAvatar={handleChangeImageProject}/>
-         {/*    <label htmlFor="image" className="button">
-                Subir foto del proyecto
-            </label>
-            <input
-                className="addForm__hidden"
-                type="file"
-                name="image"
-                id="image"
-            /> */}
-            <label htmlFor="photo" className="button">
-                Subir foto de la autora
-            </label>
-            <input
-                className="addForm__hidden"
-                type="file"
-                name="photo"
-                id="photo"
-            />
-            <button className="button--large">
+     
+            <GetAvatar text="Subir foto de la autora" updateAvatar={handleChangeAvatar} />
+
+            <button className="button--large" onClick={handleSavedProject}>
                 Guardar proyecto
             </button>
         </fieldset>
