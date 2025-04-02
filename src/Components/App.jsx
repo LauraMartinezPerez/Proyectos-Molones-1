@@ -11,32 +11,24 @@ import "../scss/App.scss";
  
  function App() {
      const [projectInfo, setProjectInfo] = useState({
-         projectName: "",
+         name: "",
          slogan: "",
-         repository: "",
+         repo: "",
          demo: "",
          technologies: "",
-         description: "",
-         name: "",
+         desc: "",
+         autor: "",
          job: "",
-         imageProject: "",
-         avatar: "",
+         image: "",
+         photo: "",
      });
-     const [linkPage, setLinkPage] = useState("");
 
-     // const [projectName, setProjectName] = useState("Nombre del proyecto");
-     // const [slogan, setSlogan] = useState("Slogan");
-     // const [repository, setRepository] = useState("Repositorio");
-     // const [demo, setDemo] = useState("Demo");
-     // const [technologies, setTecnologies] = useState("Tecnologías");
-     // const [description, setDescription] = useState("Descripción");
-     // const [name, setName] = useState("Nombre");
-     // const [job, setJob] = useState("Trabajo");
+     const [cardLink, setCardLink] = useState("");
 
      const handleProjectName = (valueProjectName) => {
         setProjectInfo({
             ...projectInfo,
-            projectName: valueProjectName,
+            name: valueProjectName,
         });
      };    
     const handleSlogan = (valueSlogan) => {
@@ -49,7 +41,7 @@ import "../scss/App.scss";
     const handleRepository = (valueRepository) => {
         setProjectInfo({
             ...projectInfo,
-            repository: valueRepository,
+            repo: valueRepository,
         });
     };
 
@@ -70,14 +62,14 @@ import "../scss/App.scss";
     const handleDescription = (valueDescription) => {
         setProjectInfo({
             ...projectInfo,
-            description: valueDescription,
+            desc: valueDescription,
         });
     };
 
     const handleName = (valueName) => {
         setProjectInfo({
             ...projectInfo,
-            name: valueName,
+            autor: valueName,
         });
     };
 
@@ -91,48 +83,33 @@ import "../scss/App.scss";
     const handleChangeImageProject = (valueImageProject) => {
         setProjectInfo({
             ...projectInfo,
-            imageProject: valueImageProject,
+            image: valueImageProject,
         });
     };
 
     const handleChangeAvatar = (valueAvatar) => {
         setProjectInfo({
             ...projectInfo,
-            avatar: valueAvatar,
+            photo: valueAvatar,
         });
     }
-
     const handleSaveProject = () => {
-
-        const apiUpload = {
-            autor: projectInfo.projectName,
-            slogan: projectInfo.slogan,
-           repo: projectInfo.repository,
-            demo: projectInfo.demo,
-            technologies: projectInfo.technologies,
-            desc: projectInfo.description,
-            name: projectInfo.name,
-            job: projectInfo.job,
-            image: projectInfo.imageProject,
-            photo: projectInfo.avatar,
-           
-        }
-
         fetch("https://dev.adalab.es/api/projectCard", {
             method: "POST",
             headers: {
-                "Content-type": "application/json"},
-                    body: JSON.stringify(apiUpload) 
-                })
-            .then (res => res.json())
-            .then(data => {
-                
-               setLinkPage
-                console.log(data.cardURL);
-            })
-        };
-             
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(projectInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.cardURL);
+            setCardLink(data.cardURL);
+        });
+        
+    };
 
+console.log(cardLink);
     return (
         <>
             <div className="container">
@@ -140,6 +117,7 @@ import "../scss/App.scss";
 
                 <main className="main">
                     <section className="hero">
+                        
                         <h2 className="title">Proyectos molones</h2>
                         <p className="hero__text">
                             Escaparate en línea para recoger ideas a través de
@@ -149,6 +127,7 @@ import "../scss/App.scss";
                             Ver proyectos
                         </a>
                     </section>
+  
 
                     <Preview project={projectInfo} />
                     
@@ -164,6 +143,7 @@ import "../scss/App.scss";
                         onChangeImageProject={handleChangeImageProject}
                         onChangeAvatar={handleChangeAvatar}
                         onSaveProject={handleSaveProject}
+                        cardLink={cardLink}
                         
                         
                     

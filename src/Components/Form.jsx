@@ -3,6 +3,7 @@ import GetAvatar from "./GetAvatar";
 import "../scss/layout/Form.scss";
 
 const Form = (props) => {
+    const {cardLink} = props;
     const handleChangeProjectName = (ev) => {
         props.onChangeProjectName(ev.target.value);
     }
@@ -40,6 +41,7 @@ const Form = (props) => {
         props.onSaveProject();
     
     }
+
 
     return (
         <>
@@ -132,7 +134,7 @@ const Form = (props) => {
                 Guardar proyecto
             </button>
         </fieldset> 
-        <a href="" target="_blank">Visualiza tu tarjeta</a>
+        <a href={cardLink} target="_blank">Visualiza tu tarjeta</a>
     </form>
     </>
     )

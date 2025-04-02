@@ -9,7 +9,7 @@ const Preview = ({ project }) => {
         <>
          <section className="preview">
                  <div className="projectImage">
-                    <img src={project.imageProject || imageBooks} alt="libros" />
+                    <img src={project.image || imageBooks} alt="libros" />
                  </div>
                  <article className="card">
                      <h2 className="card__projectTitle">
@@ -21,18 +21,18 @@ const Preview = ({ project }) => {
                      <div className="card__author">
                         
                          <div className="card__authorPhoto">
-                            <img src={project.avatar || imageAvatar} alt="autora"/>
+                            <img src={project.photo || imageAvatar} alt="autora"/>
                          </div>
 
                          <p className="card__job">{project.job || "Trabajo"}</p>
                          <h3 className="card__name">
-                             {project.name || "Nombre"}
+                             {project.autor || "Nombre"}
                          </h3>
                      </div>
 
                      <div className="card__project">
                          <h3 className="card__name">
-                             {project.projectName || "Nombre del proyecto"}
+                             {project.name || "Nombre del proyecto"}
                          </h3>
                          <p className="card__slogan">
                              {project.slogan || "Slogan"}
@@ -41,7 +41,7 @@ const Preview = ({ project }) => {
                              Product description
                          </h3>
                          <p className="card__description">
-                             {project.description || "Descripción"}
+                             {project.desc || "Descripción"}
                          </p>
                          <div className="card__technicalInfo">
                              <p className="card__technologies">
