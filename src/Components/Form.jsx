@@ -45,7 +45,7 @@ const Form = (props) => {
     
     }
 
-    let classHidden = "cardLink";
+    let classHidden = "";
     if (hiddenLink === false) {
         classHidden = "hidden";
     }
