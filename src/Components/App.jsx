@@ -24,6 +24,7 @@ import "../scss/App.scss";
      });
 
      const [cardLink, setCardLink] = useState("");
+     const [hiddenLink, setHiddenLink] = useState(false);
 
      const handleProjectName = (valueProjectName) => {
         setProjectInfo({
@@ -103,13 +104,11 @@ import "../scss/App.scss";
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data.cardURL);
             setCardLink(data.cardURL);
+            setHiddenLink(true);
         });
         
     };
-
-console.log(cardLink);
     return (
         <>
             <div className="container">
@@ -144,6 +143,7 @@ console.log(cardLink);
                         onChangeAvatar={handleChangeAvatar}
                         onSaveProject={handleSaveProject}
                         cardLink={cardLink}
+                        hiddenLink={hiddenLink}
                         
                         
                     

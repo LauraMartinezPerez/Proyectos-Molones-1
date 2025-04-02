@@ -3,7 +3,10 @@ import GetAvatar from "./GetAvatar";
 import "../scss/layout/Form.scss";
 
 const Form = (props) => {
-    const {cardLink} = props;
+    
+    const cardLink = props.cardLink;
+    const hiddenLink = props.hiddenLink;
+
     const handleChangeProjectName = (ev) => {
         props.onChangeProjectName(ev.target.value);
     }
@@ -42,6 +45,10 @@ const Form = (props) => {
     
     }
 
+    let classHidden = "cardLink";
+    if (hiddenLink === false) {
+        classHidden = "hidden";
+    }
 
     return (
         <>
@@ -134,7 +141,9 @@ const Form = (props) => {
                 Guardar proyecto
             </button>
         </fieldset> 
-        <a href={cardLink} target="_blank">Visualiza tu tarjeta</a>
+        <div className={classHidden}>
+        <a className="button--link" href={cardLink} target="_blank">Visualiza tu tarjeta</a>
+        </div>
     </form>
     </>
     )

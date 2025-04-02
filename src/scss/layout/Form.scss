@@ -118,6 +118,19 @@
 
     cursor: pointer;
 }
+.hidden {
+    display: none;
+}
+.cardLink {
+
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: vars.$color-white-50;
+}
+
+
 
 .button--large {
     display: block;
