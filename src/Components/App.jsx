@@ -92,8 +92,8 @@ function App() {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
-                body: JSON.stringify(projectInfo),
             },
+            body: JSON.stringify(projectInfo),
         })
             .then((res) => res.json())
             .then((data) => {
