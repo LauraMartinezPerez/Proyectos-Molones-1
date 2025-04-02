@@ -6,6 +6,7 @@ import Form from "./Form";
 import Preview from "./Preview";
 
 function App() {
+    const [cardLink, setCardLink] = useState("");
     const [projectInfo, setProjectInfo] = useState({
         name: "",
         slogan: "",
@@ -97,7 +98,8 @@ function App() {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                console.log(data.cardURL);
+                setCardLink(data.cardURL);
             });
     };
 
@@ -132,6 +134,7 @@ function App() {
                         onChangeImageProject={handleChangeImageProject}
                         onChangeAvatar={handleChangeAvatar}
                         onSavedProject={handleSubmitProject}
+                        cardLink={cardLink}
                     />
                 </main>
                 <Footer />
