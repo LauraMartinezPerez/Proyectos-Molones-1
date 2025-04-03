@@ -146,7 +146,7 @@ const Form = (props) => {
                     </button>
                 </fieldset>
 
-                {props.cardLink && (
+                {props.cardLink ? (
                     <div>
                         <a
                             className="button--link"
@@ -156,7 +156,7 @@ const Form = (props) => {
                             Visualiza tu tarjeta
                         </a>
                     </div>
-                )}
+                ) : null}
             </form>
         </>
     );
