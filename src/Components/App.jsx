@@ -112,6 +112,28 @@ function App() {
             });
     };
 
+    const handleReset = () => {
+        const emptyForm = {
+            name: "",
+            slogan: "",
+            repo: "",
+            demo: "",
+            technologies: "",
+            desc: "",
+            autor: "",
+            job: "",
+            image: "",
+            photo: "",
+        };
+        setProjectInfo(emptyForm);
+        localStorageService.remove("projectInfo");
+        setCardLink("");
+    };
+
+    const handleCardClicked = () => {
+        setCardLink("");
+    };
+
     return (
         <>
             <div className="container">
@@ -145,6 +167,8 @@ function App() {
                         onChangeAvatar={handleChangeAvatar}
                         onSavedProject={handleSubmitProject}
                         cardLink={cardLink}
+                        onResetForm={handleReset}
+                        onCardClicked={handleCardClicked}
                     />
                 </main>
                 <Footer />

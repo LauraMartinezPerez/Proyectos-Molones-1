@@ -160,13 +160,20 @@ const Form = (props) => {
                             className="button--link"
                             href={cardLink}
                             target="_blank"
+                            onClick={props.onCardClicked}
                         >
                             Visualiza tu tarjeta
                         </a>
                     </div>
                 ) : null}
 
-                <button className="button--reset">Reset</button>
+                <button
+                    className="button--reset"
+                    type="button"
+                    onClick={props.onResetForm}
+                >
+                    Reset
+                </button>
             </form>
         </>
     );
