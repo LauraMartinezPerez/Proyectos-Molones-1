@@ -150,3 +150,26 @@
 .button--large:hover {
     border-color: vars.$color-white;
 }
+
+.button--reset {
+    display: block;
+    min-width: 120px;
+    max-width: 150px;
+
+    margin: 40px auto auto;
+    padding: 5px 18px;
+    color: vars.$color-dark-lilac;
+    font: vars.$font-button;
+    text-transform: none;
+    text-decoration: none;
+    text-align: center;
+
+    border-radius: 40px;
+    background-image: linear-gradient(
+        to right,
+        vars.$color-white -2%,
+        #c0b7e8 98%
+    );
+
+    cursor: pointer;
+}
