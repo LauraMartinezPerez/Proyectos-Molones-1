@@ -22,7 +22,6 @@
     background-color: vars.$color-dark;
 }
 
-
 @media screen and (min-width: 768px) {
     .main {
         max-width: 980px;
@@ -55,11 +54,7 @@
     margin-bottom: 1.8rem;
 }
 
-
-
 /* FORM */
-
-
 
 /* .footer {
     display: flex;
@@ -93,10 +88,15 @@
     backdrop-filter: blur(10px);
     border-style: solid;
     border-width: 1px;
-    border-image-source: linear-gradient(
-        to bottom,
-        #2a2a2a 0%,
-        rgba(0, 0, 0, 0)
+    // border-image-source: linear-gradient(
+    //     to bottom,
+    //     #2a2a2a 0%,
+    //     rgba(0, 0, 0, 0)
+    // );
+    background-image: linear-gradient(
+        to right,
+        vars.$color-dark-lilac -2%,
+        #c0b7e8 98%
     );
     border-image-slice: 1;
     border-radius: 20px;
@@ -108,10 +108,4 @@
     */
 }
 
-
-
-
-
 /* ICONS */
-
-

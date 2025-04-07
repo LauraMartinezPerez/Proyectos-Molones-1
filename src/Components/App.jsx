@@ -26,6 +26,7 @@ function App() {
             }
         );
     });
+    const [loading, setLoading] = useState(null);
 
     useEffect(() => {
         localStorageService.set("projectInfo", projectInfo);
@@ -100,6 +101,7 @@ function App() {
         });
     };
     const handleSubmitProject = () => {
+        setLoading(true);
         fetch("https://dev.adalab.es/api/projectCard", {
             method: "POST",
             headers: {
@@ -111,7 +113,8 @@ function App() {
             .then((data) => {
                 console.log(data.cardURL);
                 setCardLink(data.cardURL);
-            });
+            })
+            .finally(() => setLoading(false));
     };
 
     const handleReset = () => {
@@ -177,6 +180,7 @@ function App() {
                                     cardLink={cardLink}
                                     onResetForm={handleReset}
                                     onCardClicked={handleCardClicked}
+                                    isLoading={loading}
                                 />
                             </main>
                         }

@@ -154,6 +154,12 @@ const Form = (props) => {
                     </button>
                 </fieldset>
 
+                {props.isLoading ? (
+                    <div className="loader__container">
+                        <span className="loader"></span>
+                    </div>
+                ) : null}
+
                 {props.cardLink ? (
                     <div>
                         <a
