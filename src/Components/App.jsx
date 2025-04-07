@@ -1,24 +1,33 @@
 import "../scss/App.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Form from "./Form";
 import Preview from "./Preview";
+import localStorageService from "../services/localStorage";
 
 function App() {
     const [cardLink, setCardLink] = useState("");
-    const [projectInfo, setProjectInfo] = useState({
-        name: "",
-        slogan: "",
-        repo: "",
-        demo: "",
-        technologies: "",
-        desc: "",
-        autor: "",
-        job: "",
-        image: "",
-        photo: "",
+    const [projectInfo, setProjectInfo] = useState(() => {
+        return (
+            localStorageService.get("projectInfo") || {
+                name: "",
+                slogan: "",
+                repo: "",
+                demo: "",
+                technologies: "",
+                desc: "",
+                autor: "",
+                job: "",
+                image: "",
+                photo: "",
+            }
+        );
     });
+
+    useEffect(() => {
+        localStorageService.set("projectInfo", projectInfo);
+    }, [projectInfo]);
 
     const handleProjectName = (valueProjectName) => {
         setProjectInfo({
@@ -103,6 +112,28 @@ function App() {
             });
     };
 
+    const handleReset = () => {
+        const emptyForm = {
+            name: "",
+            slogan: "",
+            repo: "",
+            demo: "",
+            technologies: "",
+            desc: "",
+            autor: "",
+            job: "",
+            image: "",
+            photo: "",
+        };
+        setProjectInfo(emptyForm);
+        localStorageService.remove("projectInfo");
+        setCardLink("");
+    };
+
+    const handleCardClicked = () => {
+        setCardLink("");
+    };
+
     return (
         <>
             <div className="container">
@@ -123,6 +154,7 @@ function App() {
                     <Preview project={projectInfo} />
 
                     <Form
+                        project={projectInfo}
                         onChangeProjectName={handleProjectName}
                         onChangeSlogan={handleSlogan}
                         onChangeRepository={handleRepository}
@@ -135,6 +167,8 @@ function App() {
                         onChangeAvatar={handleChangeAvatar}
                         onSavedProject={handleSubmitProject}
                         cardLink={cardLink}
+                        onResetForm={handleReset}
+                        onCardClicked={handleCardClicked}
                     />
                 </main>
                 <Footer />
