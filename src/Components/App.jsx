@@ -4,6 +4,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Form from "./Form";
 import Preview from "./Preview";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
     const [cardLink, setCardLink] = useState("");
@@ -107,36 +109,46 @@ function App() {
         <>
             <div className="container">
                 <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route
+                        path="/project"
+                        element={
+                            <main className="main">
+                                <section className="hero">
+                                    <h2 className="title">Proyectos molones</h2>
+                                    <p className="hero__text">
+                                        Escaparate en línea para recoger ideas a
+                                        través de la tecnología
+                                    </p>
+                                    <a className="button--link" href="./">
+                                        Ver proyectos
+                                    </a>
+                                </section>
 
-                <main className="main">
-                    <section className="hero">
-                        <h2 className="title">Proyectos molones</h2>
-                        <p className="hero__text">
-                            Escaparate en línea para recoger ideas a través de
-                            la tecnología
-                        </p>
-                        <a className="button--link" href="./">
-                            Ver proyectos
-                        </a>
-                    </section>
+                                <Preview project={projectInfo} />
 
-                    <Preview project={projectInfo} />
-
-                    <Form
-                        onChangeProjectName={handleProjectName}
-                        onChangeSlogan={handleSlogan}
-                        onChangeRepository={handleRepository}
-                        onChangeDemo={handleDemo}
-                        onChangeTechnologies={handleTechnologies}
-                        onChangeDescription={handleDescription}
-                        onChangeName={handleName}
-                        onChangeJob={handleJob}
-                        onChangeImageProject={handleChangeImageProject}
-                        onChangeAvatar={handleChangeAvatar}
-                        onSavedProject={handleSubmitProject}
-                        cardLink={cardLink}
+                                <Form
+                                    onChangeProjectName={handleProjectName}
+                                    onChangeSlogan={handleSlogan}
+                                    onChangeRepository={handleRepository}
+                                    onChangeDemo={handleDemo}
+                                    onChangeTechnologies={handleTechnologies}
+                                    onChangeDescription={handleDescription}
+                                    onChangeName={handleName}
+                                    onChangeJob={handleJob}
+                                    onChangeImageProject={
+                                        handleChangeImageProject
+                                    }
+                                    onChangeAvatar={handleChangeAvatar}
+                                    onSavedProject={handleSubmitProject}
+                                    cardLink={cardLink}
+                                />
+                            </main>
+                        }
                     />
-                </main>
+                </Routes>
+
                 <Footer />
             </div>
         </>
