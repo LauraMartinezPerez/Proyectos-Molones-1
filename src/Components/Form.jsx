@@ -165,6 +165,8 @@ const Form = (props) => {
                         </a>
                     </div>
                 ) : null}
+
+                <button className="button--reset">Reset</button>
             </form>
         </>
     );
