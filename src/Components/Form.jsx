@@ -53,6 +53,7 @@ const Form = (props) => {
                         name="name"
                         id="name"
                         placeholder="Nombre del proyecto"
+                        value={props.project.name}
                         onChange={handleChangeProjectName}
                         required
                     />
@@ -62,6 +63,7 @@ const Form = (props) => {
                         name="slogan"
                         id="slogan"
                         placeholder="Slogan"
+                        value={props.project.slogan}
                         onChange={handleChangeSlogan}
                         required
                     />
@@ -69,19 +71,21 @@ const Form = (props) => {
                         <input
                             className="addForm__input"
                             type="url"
-                            name="repo"
-                            id="repo"
-                            placeholder="Repositorio"
-                            onChange={handleChangeRepository}
+                            name="demo"
+                            id="demo"
+                            placeholder="Demo"
+                            value={props.project.demo}
+                            onChange={handleChangeDemo}
                             required
                         />
                         <input
                             className="addForm__input"
                             type="url"
-                            name="demo"
-                            id="demo"
-                            placeholder="Demo"
-                            onChange={handleChangeDemo}
+                            name="repo"
+                            id="repo"
+                            placeholder="Repositorio"
+                            value={props.project.repo}
+                            onChange={handleChangeRepository}
                             required
                         />
                     </div>
@@ -91,6 +95,7 @@ const Form = (props) => {
                         name="technologies"
                         id="technologies"
                         placeholder="Tecnologías"
+                        value={props.project.technologies}
                         onChange={handleChangeTechnologies}
                         required
                     />
@@ -101,6 +106,7 @@ const Form = (props) => {
                         id="desc"
                         placeholder="Descripción"
                         rows="5"
+                        value={props.project.desc}
                         onChange={handleChangeDescription}
                         required
                     ></textarea>
@@ -116,6 +122,7 @@ const Form = (props) => {
                         name="autor"
                         id="autor"
                         placeholder="Nombre"
+                        value={props.project.autor}
                         onChange={handleChangeName}
                         required
                     />
@@ -125,6 +132,7 @@ const Form = (props) => {
                         name="job"
                         id="job"
                         placeholder="Trabajo"
+                        value={props.project.job}
                         onChange={handleChangeJob}
                         required
                     />
